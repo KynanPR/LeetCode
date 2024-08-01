@@ -9,11 +9,21 @@
 			"args": ["${workspaceFolder}/src/index.ts"]
 		},
 		{
+            "name": "Launch Current TypeScript File",
+            "type": "node",
+            "request": "launch",
+            "runtimeArgs": ["-r", "ts-node/register"],
+            "program": "${file}", // This will be replaced with the path to the active file
+            "outFiles": ["${workspaceFolder}/dist/**/*.js"], // Optional: Specify output files for debugging
+            "sourceMaps": true
+        }
+		{
 			"type": "node",
 			"request": "attach",
 			"name": "Attach to Process",
 			"port": 5858,
 			"outFiles": []
 		}
+
 	]
 }
